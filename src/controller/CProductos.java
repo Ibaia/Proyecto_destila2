@@ -18,7 +18,7 @@ import model.producto.ProductModel;
 /**
  * Servlet implementation class CCliente
  */
-@WebServlet("/CCliente")
+@WebServlet("/CProducto")
 public class CProductos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -50,8 +50,7 @@ public class CProductos extends HttpServlet {
              jsonProducto.put("descripcion", productos.getProducto().get(i).getDescripcion());
              jsonProducto.put("img", productos.getProducto().get(i).getImg());
              jsonProducto.put("precio", productos.getProducto().get(i).getPrecio());
-             jsonProducto.put("id_categoria", productos.getProducto().get(i).getId_categoria());
-             
+             jsonProducto.put("id_categoria", productos.getProducto().get(i).getId_categoria());            
              
              jsonArrayProducto.add(jsonProducto);
          }
