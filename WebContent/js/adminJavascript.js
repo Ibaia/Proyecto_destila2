@@ -12,11 +12,13 @@
 				
 				  html += '<p>'
 				  html += '<label>'
-				  html += '<input class="with-gap" name="1" type="radio" value="'+producto.id+'"/>'
+				  html += '<input class="with-gap" name="selected" type="radio" value="'+producto.id+'"/>'
 				  html += '<span>'+ producto.nombre +'</span>'
 				  html += '</label>'
 				  html += '</p>'
 			}
+     	html += '<button type="submit" class="modal-close waves-effect waves-green btn-flat">Submit</button>'
+     		
      	$('#selectNombres').html(html);
      })
  });

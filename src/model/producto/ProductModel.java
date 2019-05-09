@@ -60,6 +60,39 @@ public class ProductModel extends ProductClass{
 		}
 		this.disconnect();
 	}
+
+	public void editarProducto(int id) {
+		{
+			this.createConnection();
+			
+			Statement st;
+			try {
+				
+				st = this.con.createStatement();
+				ResultSet rs = st.executeQuery("SELECT * FROM productos where id="+ id);
+
+				while (rs.next()) // reads the table line by line
+				{
+					ProductClass newD = new ProductClass();
+					
+					newD.id=Integer.parseInt(rs.getString("id"));
+					newD.nombre=rs.getString("nombre");
+					newD.descripcion=rs.getString("descripcion");
+					newD.img=rs.getString("img");
+					newD.precio=Double.parseDouble(rs.getString("precio"));
+					newD.id_categoria=Integer.parseInt(rs.getString("id_categoria"));
+					
+					
+					this.producto.add(newD);
+				
+				} 
+			}catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			this.disconnect();
+		}
+	}
 	
 	
 }

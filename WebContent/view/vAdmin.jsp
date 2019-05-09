@@ -78,15 +78,15 @@
                                 <h4>Seleccionar el  producto</h4>
 							<div class="row">
             					<div class="input-field col s12">
-                    			<div id="selectNombres">
+                    			<form action="CEditar" id="selectNombres">
 
-                            	</div>
-                            	
+					
+                            	</form>
+                           
                             	</div>	
                   			</div>
 
                             <div class="modal-footer">
-                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
                             </div>
                     </div>
                 </div>
