@@ -18,7 +18,7 @@ import model.producto.ProductModel;
 /**
  * Servlet implementation class CCliente
  */
-@WebServlet("/CProducto")
+@WebServlet("/CProductos")
 public class CProductos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -38,7 +38,7 @@ public class CProductos extends HttpServlet {
 		ProductModel productos = new ProductModel();
 		productos.loadData();
 		
-		String jsonString = JSONStringer.valueToString(productos);
+	//	String jsonString = JSONStringer.valueToString(productos);
 		 ArrayList<JSONObject> jsonArrayProducto=new ArrayList<JSONObject>();
 
          for (int i=0;i<productos.getProducto().size();i++){
@@ -63,7 +63,7 @@ public class CProductos extends HttpServlet {
 
         out.print(jsonArrayProducto);
         out.flush();
-
+       // System.out.println(jsonArrayProducto.toString());
         
 		//request.getRequestDispatcher("view/vCliente.jsp").forward(request, response);
 		

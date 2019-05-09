@@ -75,14 +75,21 @@
 
                     <div id="modalEditar" class="modal">
                             <div class="modal-content">
-                                <h4>Editar producto</h4>
+                                <h4>Seleccionar el  producto</h4>
+							<div class="row">
+            					<div class="input-field col s12">
+                    			<div id="selectNombres">
 
+                            	</div>
+                            	
+                            	</div>	
+                  			</div>
 
-                            </div>
                             <div class="modal-footer">
                                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
                             </div>
                     </div>
+                </div>
                 </div>
                 
                 <div class="col s12 botones">
@@ -124,15 +131,16 @@
         
         </div>
     </div>
+    <div id="prueba">
+    
+    </div>
 </body>
 <!-- Compiled and minified JavaScript -->
-<script src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>  
-<script src="js/javascript.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script> 
+<script type="text/javascript" src="js/adminJavascript.js"></script> 
 <script>
-    $(document).ready(function(){
-        $('.modal').modal();
-        $('select').formSelect();
-    });
+$('.modal').modal();
+$('select').formSelect();
 </script>
 </html>
