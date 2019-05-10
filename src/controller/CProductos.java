@@ -16,7 +16,7 @@ import org.json.JSONStringer;
 import model.producto.ProductModel;
 
 /**
- * Servlet implementation class CCliente
+ * Servlet implementation class CProductos
  */
 @WebServlet("/CProductos")
 public class CProductos extends HttpServlet {
