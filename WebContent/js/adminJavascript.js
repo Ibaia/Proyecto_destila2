@@ -19,7 +19,7 @@ $(document).ready(function(){
    				  html += '</label>'
    				  html += '</p>'
    			}
-        	html += '<button type="submit" class="modal-close waves-effect waves-green btn-flat">Submit</button>'
+        	html += '<button type="submit" class="modal-close waves-effect waves-green btn-flat">Seleccionar</button>'
         		
         	$('#selectNombres').html(html);
         })
