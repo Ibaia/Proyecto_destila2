@@ -4,8 +4,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.PreparedStatement;
+
 
 import model.subcategoria.SubcategoriaModel;
+
+
 
 public class ProductModel extends ProductClass{
 
@@ -65,30 +69,29 @@ public class ProductModel extends ProductClass{
 		{
 			this.createConnection();
 			
-			Statement st;
+			String mensaje="";
+			PreparedStatement pst;
 			try {
-				
-				st = this.con.createStatement();
-				ResultSet rs = st.executeQuery("SELECT * FROM productos where id="+ id);
+				pst = this.con.prepareStatement("UPDATE LIBROS " 
+												+ " SET nombre=?,  "
+												+" descripcion=? ,  "
+												+" img=?  "
+												+" precio=? , " 
+												+" WHERE productos.id=?");
 
-				while (rs.next()) // reads the table line by line
-				{
-					ProductClass newD = new ProductClass();
+				pst.setInt(1, this.id);
+				pst.setString(3, this.nombre);
+				pst.setString(3, this.descripcion);
+				pst.setString(4, this.img);
+				pst.setDouble(5, this.precio);
+				pst.setInt(6, this.id_categoria);
 					
-					newD.id=Integer.parseInt(rs.getString("id"));
-					newD.nombre=rs.getString("nombre");
-					newD.descripcion=rs.getString("descripcion");
-					newD.img=rs.getString("img");
-					newD.precio=Double.parseDouble(rs.getString("precio"));
-					newD.id_categoria=Integer.parseInt(rs.getString("id_categoria"));
-					
-					
-					this.producto.add(newD);
+				pst.execute();
 				
-				} 
-			}catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				 
+			}catch (SQLException e) {
+				
+				e.printStackTrace();
 			}
 			this.disconnect();
 		}
