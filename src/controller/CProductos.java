@@ -37,8 +37,8 @@ public class CProductos extends HttpServlet {
 		// TODO Auto-generated method stub
 		ProductModel productos = new ProductModel();
 		productos.loadData();
-		
-		//String jsonString = JSONStringer.valueToString(productos);
+
+	//	String jsonString = JSONStringer.valueToString(productos);
 		 ArrayList<JSONObject> jsonArrayProducto=new ArrayList<JSONObject>();
 
          for (int i=0;i<productos.getProducto().size();i++){
@@ -50,8 +50,7 @@ public class CProductos extends HttpServlet {
              jsonProducto.put("descripcion", productos.getProducto().get(i).getDescripcion());
              jsonProducto.put("img", productos.getProducto().get(i).getImg());
              jsonProducto.put("precio", productos.getProducto().get(i).getPrecio());
-             jsonProducto.put("id_categoria", productos.getProducto().get(i).getId_categoria());
-             
+             jsonProducto.put("id_categoria", productos.getProducto().get(i).getId_categoria());            
              
              jsonArrayProducto.add(jsonProducto);
          }
@@ -64,7 +63,7 @@ public class CProductos extends HttpServlet {
 
         out.print(jsonArrayProducto);
         out.flush();
-
+       // System.out.println(jsonArrayProducto.toString());
         
 		//request.getRequestDispatcher("view/vCliente.jsp").forward(request, response);
 		

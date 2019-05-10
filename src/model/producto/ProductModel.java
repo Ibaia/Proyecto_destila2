@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 
 import model.subcategoria.SubcategoriaModel;
 
+
+
 public class ProductModel extends ProductClass{
 
 	ArrayList<ProductClass> producto =new ArrayList<ProductClass>();
@@ -61,6 +63,7 @@ public class ProductModel extends ProductClass{
 		}
 		this.disconnect();
 	}
+
 	
 	public void editarProducto(int id) 
 		{
