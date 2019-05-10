@@ -95,4 +95,9 @@ public class ProductModel extends ProductClass{
 			}
 			this.disconnect();
 		}
+
+	public Object selectedProduct(int id) {
+		
+		return null;
+	}
 }

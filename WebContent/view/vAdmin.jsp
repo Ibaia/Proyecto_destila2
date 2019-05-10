@@ -128,11 +128,8 @@
             
                 <div class="col-12 botones">
 
-
                         <a href="view/vIndex.html" class="waves-effect waves-light btn-large modal-trigger col s12">Cambiar de usuario</a>
-
                 </div>
-        
         </div>
     </div>
     <div id="prueba">
@@ -141,13 +138,9 @@
 </body>
 <!-- Compiled and minified JavaScript -->
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-<<<<<<< HEAD
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>  
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>  
 <script src="js/adminJavascript.js"></script>
-=======
-<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script> 
-<script type="text/javascript" src="js/adminJavascript.js"></script> 
->>>>>>> branch 'Ibaia_branch' of https://github.com/Ibaia/Proyecto_destila2.git
+
 <script>
 $('.modal').modal();
 $('select').formSelect();

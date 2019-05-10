@@ -34,7 +34,13 @@ public class CEditar extends HttpServlet {
 		ProductModel productos = new ProductModel();
 		productos.loadData();
 		
-		productos.editarProducto(id);
+		
+		
+		request.setAttribute("producto", productos.selectedProduct(id));
+		request.getRequestDispatcher("view/vEditProducto.jsp").forward(request, response);
+		
+		
+		//anadir datos al request
 		
 		
 	}
