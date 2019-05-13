@@ -115,6 +115,31 @@ public class ProductModel extends ProductClass{
 	 */
 	public Object selectedProduct(int id) {
 		
+		Statement st;
+		try {
+			st = this.con.createStatement();	
+			ResultSet rs = st.executeQuery("SELECT * FROM productos"
+											+ " WHERE  id = "+"'"+id+"'");
+			
+			while (rs.next()){
+				
+				ProductClass producto = new ProductClass();
+				
+				producto.setId(rs.getInt("id"));
+				producto.setNombre(rs.getString("nombre"));
+				producto.setDescripcion("descripcion");
+				producto.setImg(rs.getString("img"));
+				producto.setPrecio(rs.getDouble("precio"));
+				producto.setId_categoria(rs.getInt("id_categoria"));
+				
+				this.producto.add(producto);
+			}
+
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
