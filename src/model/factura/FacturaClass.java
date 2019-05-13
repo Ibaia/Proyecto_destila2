@@ -1,3 +1,12 @@
+	/**
+
+	 * Esta clase contiene los atributos de la base de datos, con getters, setters y 2 contructores uno vacio y el otro lleno 
+
+	 * @author: Ibai Acha
+
+	 * @version: 7/5/2019
+
+	 */
 package model.factura;
 
 import java.util.ArrayList;
@@ -18,6 +27,18 @@ public class FacturaClass extends Connect{
 	public FacturaClass() {
 		super();
 	}
+
+	public FacturaClass(int id, int cantidadTot, double precioTot, ArrayList productos, Date fecha_compra,
+			String comprador) {
+		super();
+		this.id = id;
+		this.cantidadTot = cantidadTot;
+		this.precioTot = precioTot;
+		this.productos = productos;
+		this.fecha_compra = fecha_compra;
+		this.comprador = comprador;
+	}
+
 
 	//----------------------\\
 	public int getId() {

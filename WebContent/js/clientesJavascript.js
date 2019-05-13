@@ -9,8 +9,6 @@ $(document).ready(function () {
     var html = "";
 
 
-
-
     for (let index = 0; index < productos.length; index++) {
       const producto = productos[index];
       html += '<div class="col s6 m3 l3">'
@@ -27,14 +25,12 @@ $(document).ready(function () {
       html += '</div>'
 
 
-
-
-
     }
 
     $('.cuerpoProductos').html(html);
     rellenarModalProducto();
 
+    
     $.getJSON("http://localhost:8080/Proyecto_destila2/CCategoria"
     ).done(function (response) {
       console.log(response);
@@ -75,11 +71,10 @@ $(document).ready(function () {
   
             $('.cuerpoProductos').html(html_categoria);
 
-rellenarModalProducto();
+            rellenarModalProducto();
           }
   
         }
-  
   
       });
   

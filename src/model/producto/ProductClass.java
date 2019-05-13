@@ -1,8 +1,18 @@
+	/**
+
+	 * Esta clase contiene los atributos de la base de datos, con getters, setters y 2 contructores uno vacio y el otro lleno 
+
+	 * @author: Ibai Acha
+
+	 * @version: 7/5/2019
+
+	 */
 package model.producto;
 
 import model.Connect;
 
 public class ProductClass extends Connect{
+
 
 	protected int id;
 	protected String nombre;

@@ -1,3 +1,12 @@
+	/**
+
+	 * Este servlet carga los datos desde ProductoModel para poder crear un JSONobjet y utilizarlo en el cliente
+
+	 * @author: Ibai Acha
+
+	 * @version: 9/5/2019
+
+	 */
 package controller;
 
 import java.io.IOException;

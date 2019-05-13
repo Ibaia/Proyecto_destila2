@@ -1,3 +1,12 @@
+	/**
+
+	 * Esta clase contiene una arrayList de un clase para almacenar los datos y metodos  
+
+	 * @author: Ibai Acha
+
+	 * @version: 7/5/2019
+
+	 */
 package model.categoria;
 
 import java.sql.ResultSet;
@@ -32,7 +41,9 @@ public class CategoriaModel extends CategoriaClass{
 		this.categoria = categoria;
 	}
 
-
+	 /**
+	  *  Carga los datos de categorias 
+	  */
 	public void loadData()
 	{
 		this.createConnection();

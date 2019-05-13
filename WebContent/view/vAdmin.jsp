@@ -13,24 +13,24 @@
     <div class="container">
         <h1 class="col-12 center-align">Destila2</h1>
         <div class="row cuerpo">
-
+<!-- Añadir Producto -->
                 <div class="col s12 botones">
                     <a class="waves-effect waves-light btn-large modal-trigger col s12"  href="#modalAniadir" >Aniadir producto</a>
     
                     <div id="modalAniadir" class="modal">
                         <div class="modal-content">
                             <h4>Aniadir producto</h4>
-                            <form>
+                            <form action="CEjecutarAñadir">
        	 					<div class="row">
             					<div class="input-field col s12">
-            					<input placeholder="Placeholder" id="first_name" type="text" class="validate">
-            					<label for="first_name">Nombre </label>
+            					<input placeholder="Placeholder" id="nombre" type="text" class="validate">
+            					<label for="nombre">Nombre </label>
             					</div>
         					</div>
 
         					<div class="row">
             					<div class="input-field col s12">
-                    			<select>
+                    			<select id="categoria">
                       				<option value="" disabled selected>Choose your option</option>
                       				<option value="1">Option 1</option>
                       				<option value="2">Option 2</option>
@@ -42,21 +42,21 @@
 
         					<div class="row">
             					<div class="input-field col s12">
-            						<input placeholder="Placeholder" id="first_name" type="text" class="validate">
-            						<label for="first_name">Precio</label>
+            						<input placeholder="Placeholder" id="precio" type="text" class="validate">
+            						<label for="precio">Precio</label>
             					</div>
         					</div>
 
         					<div class="row">
             					<div class="input-field col s12">
-            					<input placeholder="Placeholder" id="first_name" type="text" class="validate">
-           	 					<label for="first_name">URL de la imagen</label>
+            					<input placeholder="Placeholder" id="img" type="text" class="validate">
+           	 					<label for="img">URL de la imagen</label>
             					</div>
         					</div>
         					<div class="row">
             					<div class="input-field col s12">
-            					<input placeholder="Placeholder" id="first_name" type="text" class="validate">
-            					<label for="first_name">Descripcion del producto</label>
+            					<input placeholder="Placeholder" id="descripcion" type="text" class="validate">
+            					<label for="descripcion">Descripcion del producto</label>
             					</div>
         					</div>
         					<input type="submit" class="waves-effect waves-light btn-large modal-trigger col s12" value="Enviar"></input>
@@ -69,7 +69,7 @@
                         </div>
                 </div>
 
-
+<!-- Editar producto -->
                 <div class="col s12 botones">
                     <a class="waves-effect waves-light btn-large modal-trigger col s12" href="#modalEditar">Editar producto</a>
 
@@ -89,7 +89,8 @@
                     </div>
                 </div>
                 </div>
-                
+ 
+ <!-- Borrar producto -->               
                 <div class="col s12 botones">
                     <a class="waves-effect waves-light btn-large modal-trigger col s12" href="#modalBorrar">Borrar producto</a>
 
@@ -105,6 +106,7 @@
                             </div>
                         </div>
 
+<!-- Facturas -->
                 <div class="col s12 botones">
                     <a class="waves-effect waves-light btn-large modal-trigger col s12" href="#modalFactura">Facturas</a>
 

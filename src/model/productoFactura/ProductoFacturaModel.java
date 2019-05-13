@@ -1,3 +1,12 @@
+	/**
+
+	 * Esta clase contiene una arrayList de un clase para almacenar los datos  
+
+	 * @author: Ibai Acha
+
+	 * @version: 7/5/2019
+
+	 */
 package model.productoFactura;
 
 import java.sql.ResultSet;
@@ -14,7 +23,9 @@ public class ProductoFacturaModel extends ProductoFacturaClass{
 	ArrayList<ProductClass> product =new ArrayList<>(); 
 	
 	ArrayList<FacturaClass> factura =new ArrayList<>(); 
-	
+	/**
+	 * Carga los datos 
+	 */
 	public void loadData()
 	{
 		this.createConnection();
@@ -28,11 +39,7 @@ public class ProductoFacturaModel extends ProductoFacturaClass{
 			while (rs.next()) // reads the table line by line
 			{
 				ProductoFacturaModel newD = new ProductoFacturaModel();
-				newD.id=Integer.parseInt(rs.getString(1));
-				newD.nombre=rs.getString(2);
-				newD.id_categoria=Integer.parseInt(rs.getString(3));
 				
-				this.categoria.add(newD);
 			
 			} 
 		}catch (SQLException e1) {

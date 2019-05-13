@@ -1,3 +1,12 @@
+	/**
+
+	 * Esta clase contiene una arrayList de un clase para almacenar los datos y metodos
+
+	 * @author: Ibai Acha
+
+	 * @version: 7/5/2019
+
+	 */
 package model.producto;
 
 import java.sql.ResultSet;
@@ -32,6 +41,9 @@ public class ProductModel extends ProductClass{
 		this.producto = producto;
 	}
 
+	/**
+	 * Carga los datos de los productos
+	 */
 	public void loadData()
 	{
 		this.createConnection();
@@ -64,7 +76,9 @@ public class ProductModel extends ProductClass{
 		this.disconnect();
 	}
 
-	
+	/**
+	 * Pasando el id del producto te permite modificar el producto
+	 */
 	public void editarProducto(int id) 
 		{
 			this.createConnection();
@@ -72,7 +86,7 @@ public class ProductModel extends ProductClass{
 			String mensaje="";
 			PreparedStatement pst;
 			try {
-				pst = this.con.prepareStatement("UPDATE LIBROS " 
+				pst = this.con.prepareStatement("UPDATE productos " 
 												+ " SET nombre=?,  "
 												+" descripcion=? ,  "
 												+" img=?  "
@@ -96,8 +110,38 @@ public class ProductModel extends ProductClass{
 			this.disconnect();
 		}
 
+	/**
+	 * Selecciona un producto por id
+	 */
 	public Object selectedProduct(int id) {
 		
 		return null;
+	}
+
+	/**
+	 * Añade un producto a la base de datos
+	 */
+	public String aniadirProducto() {
+		String mensaje="";
+		PreparedStatement pst;
+		try {
+			pst = this.con.prepareStatement("INSERT INTO productos (nombre, id_categoria, precio, img, descripcion)"
+					+ " VALUES (?,?,?,?,?)");
+			
+			pst.setString(1, this.nombre);
+			pst.setInt(2, this.id_categoria);
+			pst.setDouble(3, this.precio);
+			pst.setString(4, this.img);
+			pst.setString(5, this.descripcion);
+			
+			
+			pst.execute();
+			mensaje="Bebida alcoholica insertada en la BD";
+			
+		} catch (SQLException e) {
+			
+			mensaje="No se ha insertado la bebida alcoholica en la Base de datos";
+		}
+		return mensaje;
 	}
 }

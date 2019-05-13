@@ -1,3 +1,12 @@
+	/**
+
+	 * Esta clase contiene una arrayList de un clase para almacenar los datos  
+
+	 * @author: Ibai Acha
+
+	 * @version: 7/5/2019
+
+	 */
 package model.subcategoria;
 
 import java.sql.ResultSet;

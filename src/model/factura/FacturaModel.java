@@ -1,3 +1,12 @@
+	/**
+
+	 * Esta clase contiene una arrayList de un clase para almacenar los datos  y metodos
+
+	 * @author: Ibai Acha
+
+	 * @version: 7/5/2019
+
+	 */
 package model.factura;
 
 import java.sql.ResultSet;
@@ -11,6 +20,29 @@ public class FacturaModel extends FacturaClass{
 
 	ArrayList<FacturaClass> Factura =new ArrayList<FacturaClass>();
 	
+
+	public FacturaModel() {
+		super();
+	}
+
+	public FacturaModel(ArrayList<FacturaClass> factura) {
+		super();
+		Factura = factura;
+	}
+
+	public ArrayList<FacturaClass> getFactura() {
+		return Factura;
+	}
+
+
+	public void setFactura(ArrayList<FacturaClass> factura) {
+		Factura = factura;
+	}
+
+
+	/**
+	 * Carga los datos de los productos
+	 */
 	public void loadData()
 	{
 		this.createConnection();
