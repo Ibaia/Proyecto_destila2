@@ -14,11 +14,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import model.producto.ProductClass;
 import model.subcategoria.SubcategoriaModel;
 
 public class FacturaModel extends FacturaClass{
 
-	ArrayList<FacturaClass> Factura =new ArrayList<FacturaClass>();
+	ArrayList<FacturaClass> factura =new ArrayList<FacturaClass>();
 	
 
 	public FacturaModel() {
@@ -27,16 +28,16 @@ public class FacturaModel extends FacturaClass{
 
 	public FacturaModel(ArrayList<FacturaClass> factura) {
 		super();
-		Factura = factura;
+		factura = factura;
 	}
 
 	public ArrayList<FacturaClass> getFactura() {
-		return Factura;
+		return factura;
 	}
 
 
 	public void setFactura(ArrayList<FacturaClass> factura) {
-		Factura = factura;
+		factura = factura;
 	}
 
 
@@ -51,21 +52,20 @@ public class FacturaModel extends FacturaClass{
 		try {
 			
 			st = this.con.createStatement();
-			ResultSet rs = st.executeQuery("SELECT * FROM factura");
+			ResultSet rs = st.executeQuery("SELECT * FROM facturas");
 
 			while (rs.next()) // reads the table line by line
 			{
-				FacturaModel newD = new FacturaModel();
-				newD.id=Integer.parseInt(rs.getString("id"));
-				newD.cantidadTot=Integer.parseInt(rs.getString(2));
-				newD.precioTot=Integer.parseInt(rs.getString(3));
+				FacturaModel newF = new FacturaModel();
+				newF.id=Integer.parseInt(rs.getString("id"));
+				newF.cantidadTot=Integer.parseInt(rs.getString("cantidadTot"));
+				newF.precioTot=Double.parseDouble(rs.getString("precioTot"));
+				newF.productos=rs.getString("productos");
+				newF.fecha_compra=rs.getDate("fecha_compra");
+				newF.comprador=rs.getString("comprador");
 				
-				//newD.productos=rs.getString(4);
-				newD.fecha_compra=rs.getDate("fecha_compra");
-				newD.comprador=rs.getString(6);
 				
-				
-				this.Factura.add(newD);
+				this.factura.add(newF);
 			
 			} 
 		}catch (SQLException e1) {
@@ -74,5 +74,36 @@ public class FacturaModel extends FacturaClass{
 		}
 		this.disconnect();
 	}
-	
+
+
+	public void selectedFactura(int id) {
+		this.createConnection();
+		
+		Statement st;
+		try {
+			st = this.con.createStatement();	
+			ResultSet rs = st.executeQuery("SELECT * FROM facturas WHERE  id = "+id);
+			
+			while (rs.next()){
+				
+				FacturaClass factura = new FacturaClass();
+				
+				factura.setId(rs.getInt("id"));
+				factura.setCantidadTot(rs.getInt("cantidadTot"));
+				factura.setPrecioTot(rs.getDouble("precioTot"));
+				factura.setProductos(rs.getString("productos"));
+				factura.setFecha_compra(rs.getDate("fecha_compra"));
+				factura.setComprador(rs.getString("comprador"));
+				
+				this.factura.add(factura);
+			}
+
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		this.disconnect();
+		
+	}
+		
 }

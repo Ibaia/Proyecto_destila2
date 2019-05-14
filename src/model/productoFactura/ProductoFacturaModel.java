@@ -23,6 +23,65 @@ public class ProductoFacturaModel extends ProductoFacturaClass{
 	ArrayList<ProductClass> product =new ArrayList<>(); 
 	
 	ArrayList<FacturaClass> factura =new ArrayList<>(); 
+	
+	
+	//Constructores y getters setters
+	/**
+	 * 
+	 */
+	public ProductoFacturaModel() {
+		super();
+	}
+
+	/**
+	 * @param producto
+	 * @param Linea_factura
+	 * @param cantidad
+	 * @param product
+	 * @param factura
+	 */
+	public ProductoFacturaModel(ProductClass producto, FacturaClass Linea_factura, int cantidad,
+			ArrayList<ProductClass> product, ArrayList<FacturaClass> factura) {
+		super(producto, Linea_factura, cantidad);
+		this.product = product;
+		this.factura = factura;
+	}
+
+
+	/**
+	 * @return the product
+	 */
+	public ArrayList<ProductClass> getProduct() {
+		return product;
+	}
+
+
+	/**
+	 * @param product the product to set
+	 */
+	public void setProduct(ArrayList<ProductClass> product) {
+		this.product = product;
+	}
+
+
+	/**
+	 * @return the factura
+	 */
+	public ArrayList<FacturaClass> getFactura() {
+		return factura;
+	}
+
+
+	/**
+	 * @param factura the factura to set
+	 */
+	public void setFactura(ArrayList<FacturaClass> factura) {
+		this.factura = factura;
+	}
+
+
+	//Metodos
+	
 	/**
 	 * Carga los datos 
 	 */

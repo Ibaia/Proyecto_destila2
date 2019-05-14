@@ -19,7 +19,7 @@ public class FacturaClass extends Connect{
 	protected int id;
 	protected int cantidadTot;
 	protected double precioTot;
-	protected ArrayList productos;
+	protected String productos;
 	protected Date fecha_compra;
 	protected String comprador;
 	
@@ -28,7 +28,7 @@ public class FacturaClass extends Connect{
 		super();
 	}
 
-	public FacturaClass(int id, int cantidadTot, double precioTot, ArrayList productos, Date fecha_compra,
+	public FacturaClass(int id, int cantidadTot, double precioTot, String productos, Date fecha_compra,
 			String comprador) {
 		super();
 		this.id = id;
@@ -65,11 +65,11 @@ public class FacturaClass extends Connect{
 		this.precioTot = precioTot;
 	}
 
-	public ArrayList getProductos() {
+	public String getProductos() {
 		return productos;
 	}
 
-	public void setProductos(ArrayList productos) {
+	public void setProductos(String productos) {
 		this.productos = productos;
 	}
 

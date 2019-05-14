@@ -20,42 +20,38 @@
                     <div id="modalAniadir" class="modal">
                         <div class="modal-content">
                             <h4>Aniadir producto</h4>
-                            <form action="CEjecutarAñadir">
+                            <form action="CEjecutarAniadir">
        	 					<div class="row">
             					<div class="input-field col s12">
-            					<input placeholder="Placeholder" id="nombre" type="text" class="validate">
+            					<input placeholder="Placeholder" name="nombre" id="nombre" type="text" class="validate">
             					<label for="nombre">Nombre </label>
             					</div>
         					</div>
 
         					<div class="row">
             					<div class="input-field col s12">
-                    			<select id="categoria">
-                      				<option value="" disabled selected>Choose your option</option>
-                      				<option value="1">Option 1</option>
-                      				<option value="2">Option 2</option>
-                      				<option value="3">Option 3</option>
-                    			</select>
-                    			<label>Materialize Select</label>
+                    			<div id="categoria">
+
+                    			</div>
                   				</div>
         					</div>
 
         					<div class="row">
             					<div class="input-field col s12">
-            						<input placeholder="Placeholder" id="precio" type="text" class="validate">
+            						<input placeholder="Placeholder" name="precio" id="precio" type="text" class="validate">
             						<label for="precio">Precio</label>
             					</div>
         					</div>
 
         					<div class="row">
             					<div class="input-field col s12">
-            					<input placeholder="Placeholder" id="img" type="text" class="validate">
+            					<input placeholder="Placeholder" name="img" id="img" type="text" class="validate">
            	 					<label for="img">URL de la imagen</label>
             					</div>
         					</div>
         					<div class="row">
             					<div class="input-field col s12">
-            					<input placeholder="Placeholder" id="descripcion" type="text" class="validate">
+            					<input placeholder="Placeholder"	name="descripcion" id="descripcion" type="text" class="validate">
             					<label for="descripcion">Descripcion del producto</label>
             					</div>
         					</div>
@@ -115,8 +111,19 @@
                                 <h4>Facturas</h4>
                                 <div class="row">
             						<div class="input-field col s12">
-									<form action="CEditar" id="selectNombres">
+									<form action="vFacturas" >
+										<table>
+        									<thead>
+          										<tr>
+              										<th>Id</th>
+              										<th>Comprador</th>
+              										<th>Seleccionar</th>
+          										</tr>
+          									</thead>	
+          									<tbody id="factura">	
 
+											</tbody>
+      									</table>
                             		</form>
                             		</div>
                             	</div>

@@ -42,5 +42,20 @@ margin-top:20px;
 	  margin:5%;
     height: 250px;
 }
+b{
+	text-decoration:none;
+}
+.cardProducto:link {
+color: white;
+}
+.cardProducto:visited {
+	color: white;
+}
+.cardProducto:active {
+	color: white;
+	}
+.cardProducto:hover {
+	color: white;
+	}
 
 

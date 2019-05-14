@@ -94,6 +94,7 @@ $(document).ready(function () {
         var productos = response;
       for (let modal = 0; modal < productos.length; modal++) {
         const producto = productos[modal];
+        
         if (producto.id == producto_id) {
           $('.productoTitulo').html(producto.nombre);
   

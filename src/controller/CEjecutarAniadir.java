@@ -12,14 +12,14 @@ import model.producto.ProductModel;
 /**
  * Servlet implementation class CEjecutarAñadir
  */
-@WebServlet("/CEjecutarAñadir")
-public class CEjecutarAñadir extends HttpServlet {
+@WebServlet("/CEjecutarAniadir")
+public class CEjecutarAniadir extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CEjecutarAñadir() {
+    public CEjecutarAniadir() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,7 +29,7 @@ public class CEjecutarAñadir extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nombre=request.getParameter("nombre");
-		int categoria=Integer.parseInt(request.getParameter("categoria"));
+		int categoria=Integer.parseInt(request.getParameter("id_categoria"));
 		Double precio=Double.parseDouble(request.getParameter("precio"));
 		String img=request.getParameter("img");
 		String descripcion=request.getParameter("descripcion");
@@ -42,6 +42,9 @@ public class CEjecutarAñadir extends HttpServlet {
 		myProduct.setDescripcion(descripcion);
 		
 		String mensaje=myProduct.aniadirProducto();
+		
+		request.setAttribute("mensaje", mensaje);
+		request.getRequestDispatcher("view/vAdmin.jsp").forward(request, response);
 		
 	}
 
