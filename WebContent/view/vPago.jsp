@@ -35,6 +35,18 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
+          <input placeholder="Direccion" id="direccion" type="text" class="validate">
+          <label for="direccion">Direccion</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Telefono" id="telefono" type="number" class="validate">
+          <label for="telefono">Telefono</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
           <input placeholder="DNI" id="dni" type="text" class="validate">
           <label for="dni">DNI</label>
         </div>
@@ -47,7 +59,7 @@
       </div>
       <div class="row">
         <a href="#" id="botonPagar" class="col s6 waves-effect waves-green btn-flat">Pagar</a>
-        <a href="CCliente" class="col s6 waves-effect waves-green btn-flat">Volver</a>
+        <a href="view/vCliente" class="col s6 waves-effect waves-green btn-flat">Volver</a>
       </div>
 
 
